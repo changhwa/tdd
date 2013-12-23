@@ -31,4 +31,17 @@ class MachineTest extends Specification {
         buyItem == "환타"
 
     }
+
+    def "잘못된 버튼을 누른다"(){
+
+        given: "잘못된 버튼 (여기선 리스트의 개수를 초과하는 6) 이 있다고 가정하고"
+        int wantItem = 6
+
+        when: "잘못된 버튼을 누를때"
+        String buyItem = machine.buy(wantItem)
+
+        then: "없음  이라는 멘트가 뜬다"
+        buyItem == "없음"
+    }
+
 }
