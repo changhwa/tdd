@@ -48,4 +48,19 @@ class MachineTest extends Specification {
         machine.currentMoney == 800
     }
 
+    def "부족한 돈을 넣고 음료수를 계산한다"(){
+
+        given: "천원짜리 1장을 넣는다 가정하고"
+        MoneyBean moneyBean = new MoneyBean()
+        moneyBean.paper1000 = 1
+        machine.insertMoney(moneyBean)
+
+        when: "환타를 뽑을때"
+        String itemName = machine.buy(3)
+
+        then: "아무것도 나오지 않고, 현재 금액은 투입한 금액 그대로이다"
+        itemName == ""
+        machine.currentMoney == 1000
+    }
+
 }
