@@ -13,7 +13,7 @@ class Machine {
     }
 
     def buy(int itemIndex){
-        if((--itemList.size()) < itemIndex)
+        if(itemList.size() <= itemIndex)
             return "없음"
         itemList.get(--itemIndex)
     }
