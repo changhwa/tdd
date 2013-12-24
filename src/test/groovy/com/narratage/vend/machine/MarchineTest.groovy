@@ -42,9 +42,10 @@ class MachineTest extends Specification {
         machine.insertMoney(moneyBean)
 
         when: "환타를 뽑을때"
-        machine.buy(3)
+        String itemName = machine.buy(3)
 
-        then: "1200원이 계산이되고 800원이 남는다"
+        then: "1200원이 계산이되고 800원이 남고, 환타가 나온다"
+        itemName == "환타"
         machine.currentMoney == 800
     }
 
