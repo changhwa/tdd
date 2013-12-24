@@ -5,17 +5,39 @@ class Machine {
     static List itemList = new ArrayList()
 
     static{
-        itemList.add("콜라")
-        itemList.add("사이다")
-        itemList.add("환타")
-        itemList.add("밀키스")
-        itemList.add("박카스")
+
+        MachineBean machineBean = new MachineBean()
+        machineBean.itemName = "콜라"
+        machineBean.itemValue = 1000
+        itemList.add(machineBean)
+
+        machineBean = new MachineBean()
+        machineBean.itemName = "사이다"
+        machineBean.itemValue = 800
+        itemList.add(machineBean)
+
+        machineBean = new MachineBean()
+        machineBean.itemName = "환타"
+        machineBean.itemValue = 1200
+        itemList.add(machineBean)
+
+        machineBean = new MachineBean()
+        machineBean.itemName = "밀키스"
+        machineBean.itemValue = 500
+        itemList.add(machineBean)
+
+        machineBean = new MachineBean()
+        machineBean.itemName = "박카스"
+        machineBean.itemValue = 400
+        itemList.add(machineBean)
+
     }
 
     def buy(int itemIndex){
         if(itemList.size() <= itemIndex)
             return "없음"
-        itemList.get(--itemIndex)
+        MachineBean machineBean = itemList.get(--itemIndex)
+        machineBean.itemName
     }
 
 }
