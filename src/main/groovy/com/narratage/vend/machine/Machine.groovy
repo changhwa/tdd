@@ -6,31 +6,19 @@ class Machine {
 
     static{
 
+        itemSetUp("콜라",1000)
+        itemSetUp("사이다",800)
+        itemSetUp("환타",1200)
+        itemSetUp("밀키스",500)
+        itemSetUp("박카스",400)
+
+    }
+
+    static def void itemSetUp(def name, int value) {
         MachineBean machineBean = new MachineBean()
-        machineBean.itemName = "콜라"
-        machineBean.itemValue = 1000
+        machineBean.itemName = name
+        machineBean.itemValue = value
         itemList.add(machineBean)
-
-        machineBean = new MachineBean()
-        machineBean.itemName = "사이다"
-        machineBean.itemValue = 800
-        itemList.add(machineBean)
-
-        machineBean = new MachineBean()
-        machineBean.itemName = "환타"
-        machineBean.itemValue = 1200
-        itemList.add(machineBean)
-
-        machineBean = new MachineBean()
-        machineBean.itemName = "밀키스"
-        machineBean.itemValue = 500
-        itemList.add(machineBean)
-
-        machineBean = new MachineBean()
-        machineBean.itemName = "박카스"
-        machineBean.itemValue = 400
-        itemList.add(machineBean)
-
     }
 
     def buy(int itemIndex){
