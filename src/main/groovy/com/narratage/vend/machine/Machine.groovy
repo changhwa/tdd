@@ -22,17 +22,17 @@ class Machine {
         itemList.add(machineBean)
     }
 
+    def insertMoney(MoneyBean money){
+        currentMoney = money.totalMoney
+        currentMoney
+    }
+
     def buy(int itemIndex){
         if(itemList.size() <= itemIndex)
             return "없음"
         MachineBean machineBean = itemList.get(--itemIndex)
         calc(machineBean)
         machineBean.itemName
-    }
-
-    def changeMoney(MoneyBean money){
-        currentMoney = money.totalMoney
-        currentMoney
     }
 
     def calc(MachineBean machineBean){

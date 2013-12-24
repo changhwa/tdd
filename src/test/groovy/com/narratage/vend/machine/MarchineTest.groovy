@@ -53,7 +53,7 @@ class MachineTest extends Specification {
         moneyBean.coin100 = 2
 
         when: "투입할때"
-        int money = machine.changeMoney(moneyBean)
+        int money = machine.insertMoney(moneyBean)
 
         then: "2700원이다"
         money == 2700
@@ -64,7 +64,7 @@ class MachineTest extends Specification {
         given: "천원짜리 2장을 넣는다 가정하고"
         MoneyBean moneyBean = new MoneyBean()
         moneyBean.paper1000 = 2
-        machine.changeMoney(moneyBean)
+        machine.insertMoney(moneyBean)
 
         when: "환타를 뽑을때"
         machine.buy(3)
