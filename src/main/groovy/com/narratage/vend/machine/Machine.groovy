@@ -3,6 +3,7 @@ package com.narratage.vend.machine
 class Machine {
 
     static List itemList = new ArrayList()
+    int currentMoney = 0
 
     static{
 
@@ -25,12 +26,18 @@ class Machine {
         if(itemList.size() <= itemIndex)
             return "없음"
         MachineBean machineBean = itemList.get(--itemIndex)
+        calc(machineBean)
         machineBean.itemName
     }
 
-
     def changeMoney(MoneyBean money){
-        money.totalMoney
+        currentMoney = money.totalMoney
+        currentMoney
+    }
+
+    def calc(MachineBean machineBean){
+        if(currentMoney > machineBean.itemValue)
+            currentMoney = currentMoney-machineBean.itemValue
     }
 
 }
