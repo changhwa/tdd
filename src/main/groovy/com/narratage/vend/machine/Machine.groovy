@@ -31,13 +31,15 @@ class Machine {
         if(itemList.size() <= itemIndex)
             return "없음"
         MachineBean machineBean = itemList.get(--itemIndex)
-        calc(machineBean)
-        machineBean.itemName
+        calc(machineBean) ? machineBean.itemName : ""
     }
 
     def calc(MachineBean machineBean){
-        if(currentMoney > machineBean.itemValue)
+        if(currentMoney > machineBean.itemValue){
             currentMoney = currentMoney-machineBean.itemValue
+            return true
+        }
+        return false
     }
 
 }
