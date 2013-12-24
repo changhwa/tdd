@@ -44,4 +44,15 @@ class MachineTest extends Specification {
         buyItem == "없음"
     }
 
+    def "지폐,동전을 투입한다"(){
+
+        given: "천원짜리 1장, 500원짜리 3개, 100원짜리 2개가 있다고 가정하고"
+
+        when: "투입할때"
+        int money = machine.changeMoney(1,0,0,2,3)
+
+        then: "2700원이다"
+        money == 2700
+    }
+
 }

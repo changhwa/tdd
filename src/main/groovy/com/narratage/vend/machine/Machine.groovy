@@ -40,4 +40,9 @@ class Machine {
         machineBean.itemName
     }
 
+
+    def changeMoney(int paper1000, int paper5000, int paper10000, int coin100, int coin500 ){
+        paper1000*1000+paper5000*5000+paper10000*10000+coin100*100+coin500*500
+    }
+
 }
