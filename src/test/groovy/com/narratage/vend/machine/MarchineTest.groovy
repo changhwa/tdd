@@ -63,4 +63,19 @@ class MachineTest extends Specification {
         machine.currentMoney == 1000
     }
 
+    def "거스름돈을 받는다"(){
+
+        given: "천원짜리 1장을 넣는다 가정하고"
+        MoneyBean moneyBean = new MoneyBean()
+        moneyBean.paper1000 = 1
+        machine.insertMoney(moneyBean)
+
+        when: "거스름돈 받기 버튼을 누를때"
+        int returnMoney = machine.returnMoney()
+
+        then: "거스름돈은 1000원 , 현재 금액은 0 원이다"
+        returnMoney == 1000
+        machine.currentMoney == 0
+    }
+
 }

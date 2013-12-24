@@ -42,4 +42,10 @@ class Machine {
         return false
     }
 
+    def returnMoney(){
+        int returnMoney = currentMoney
+        currentMoney = 0
+        returnMoney
+    }
+
 }
