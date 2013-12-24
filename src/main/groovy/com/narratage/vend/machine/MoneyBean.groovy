@@ -29,5 +29,9 @@ class MoneyBean {
         return coin500*500
     }
 
+    int getTotalMoney(){
+        getCoin100()+ getCoin500() + getPaper1000() + getPaper5000() + getPaper10000()
+    }
+
 
 }

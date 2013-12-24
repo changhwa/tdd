@@ -42,7 +42,7 @@ class Machine {
 
 
     def changeMoney(MoneyBean money){
-        money.coin100+money.coin500+money.paper1000+money.paper5000+money.paper10000
+        money.totalMoney
     }
 
 }
